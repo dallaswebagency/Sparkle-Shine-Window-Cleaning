@@ -41,7 +41,12 @@ Aspect ratio: **16:9**
 
 Wide realistic photograph of the Calgary skyline at golden hour with the Bow River in the foreground and the Rocky Mountains faint on the horizon, clear sky, soft warm light on the glass towers, calm and clean atmosphere. Leave the left third of the frame slightly emptier and calmer (text will sit over it). No text, no logos, no watermarks.
 
+## 8. images/about-team.jpg
+Aspect ratio: **1:1**
+
+Realistic photograph of two window cleaners in plain navy work jackets and gloves working at the front of a tidy Calgary family home, one standing on a short ladder squeegeeing an upper window, the other holding a bucket and extension pole below. Seen from behind and the side so faces are not in focus. Bright morning light, blue sky, a spruce tree, clean driveway, friendly professional mood. No text, no logos, no brand marks on clothing or vehicles, no watermarks.
+
 ---
 
 ## Already on the current site (hotlinked, no prompt needed)
-- Logo, timber-frame living room photo (hero) and Richard's photo (About) load from the current Webflow CDN. Download them and move into `images/` before the old site is shut down.
+- The timber-frame living room photo (hero) loads from the current Webflow CDN. Download it as `images/hero-room.jpg` before the old site is shut down.
