@@ -107,7 +107,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacin
 .seasons .head p{max-width:380px;color:#b9cadb}
 .panes{display:flex;gap:14px;height:600px}
 .pane{position:relative;flex:1;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,var(--ink-2),var(--blue-d));background-size:cover;background-position:center;transition:flex .7s cubic-bezier(.6,0,.2,1);display:flex;align-items:flex-end;isolation:isolate}
-.pane::before{content:"";position:absolute;inset:0;background:var(--bg) center/cover;z-index:-2;transition:transform .9s}
+.pane::before{content:"";position:absolute;inset:0;background-image:var(--bg);background-size:cover;background-position:center;z-index:-2;transition:transform .9s}
 .pane::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,28,46,.92) 8%,rgba(10,28,46,.25) 55%,rgba(10,28,46,.15));z-index:-1}
 .pane.active{flex:2.8}
 .pane.active::before{transform:scale(1.05)}
@@ -336,7 +336,7 @@ footer{background:var(--ink);color:#c5d4e3;padding:84px 0 0}
         <div class="in"><span class="tag">Summer</span><h3>Pressure Washing</h3>
         <div class="more"><p>Professional-grade washers that clean driveways, siding and any textured exterior surface.</p><span>View service &rarr;</span></div></div>
       </a>
-      <a class="pane" href="https://www.calgarywindowclean.com/services/gutter-cleaning" style="--bg:url(images/season-fall.jpg)">
+      <a class="pane" href="https://www.calgarywindowclean.com/services/gutter-cleaning" style="--bg:url(images/season-fall.jpg),linear-gradient(160deg,#c78a3a,#6e3a1c)">
         <div class="in"><span class="tag">Fall</span><h3>Gutter Cleaning</h3>
         <div class="more"><p>Dirty or clogged, we clear it out and help protect your house from erosion and damage.</p><span>View service &rarr;</span></div></div>
       </a>
