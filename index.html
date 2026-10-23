@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparkle & Shine Window Cleaning | Calgary</title>
+<meta name="description" content="Family-owned window cleaning, gutter cleaning, pressure washing and snow removal in Calgary since 2004. Streak-free results and a 100% satisfaction promise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2a43;
+  --ink-2:#17405f;
+  --blue:#286898;
+  --blue-d:#1b4f78;
+  --sky:#c8d8e8;
+  --mist:#eef3f8;
+  --paper:#fbfcfd;
+  --sun:#f2b63d;
+  --line:rgba(15,42,67,.14);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+  --wrap:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:-.02em}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--blue);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--sun)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:16px;transition:transform .25s,background .25s,color .25s,box-shadow .25s;border:2px solid transparent;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px -10px rgba(40,104,152,.7)}
+.btn-primary:hover{background:var(--blue-d)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-sun:hover{background:#ffc552}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+
+/* header */
+.top{position:sticky;top:0;z-index:50;padding:14px 0;transition:background .3s,box-shadow .3s}
+.top.scrolled{background:rgba(251,252,253,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo img{height:58px;width:auto}
+.nav{display:flex;align-items:center;gap:30px;font-weight:500;font-size:16px}
+.nav a.link{position:relative;padding:6px 0}
+.nav a.link::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--sun);transition:width .3s}
+.nav a.link:hover::after{width:100%}
+.nav-call{font-weight:600;color:var(--blue);display:flex;align-items:center;gap:8px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:26px;height:2px;background:var(--ink);margin:6px auto;transition:.3s}
+
+/* hero */
+.hero{position:relative;padding:34px 0 110px;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-12%;top:-18%;width:62vw;height:62vw;max-width:880px;max-height:880px;border-radius:50%;background:radial-gradient(circle,var(--sky) 0%,rgba(200,216,232,0) 68%);z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(44px,6vw,84px);margin:22px 0 24px}
+.hero h1 em{font-style:italic;color:var(--blue);font-weight:400}
+.hero p.lead{font-size:20px;max-width:540px;color:#34506a}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 38px}
+.hero .proof{display:flex;gap:26px;flex-wrap:wrap;font-size:15px;color:#34506a}
+.hero .proof a{border-bottom:2px solid var(--sun);font-weight:600;color:var(--ink)}
+.windowframe{position:relative;border-radius:240px 240px 24px 24px;padding:14px;background:linear-gradient(160deg,#fff,var(--sky));box-shadow:0 40px 80px -30px rgba(15,42,67,.45);aspect-ratio:4/5.1}
+.pane-view{position:relative;width:100%;height:100%;border-radius:226px 226px 12px 12px;overflow:hidden;background:var(--ink-2)}
+.pane-view img{width:100%;height:100%;object-fit:cover}
+.mullion-v,.mullion-h{position:absolute;background:rgba(255,255,255,.85);z-index:3;box-shadow:0 0 0 1px rgba(15,42,67,.1)}
+.mullion-v{left:50%;top:0;bottom:0;width:7px;transform:translateX(-50%)}
+.mullion-h{left:0;right:0;top:52%;height:7px}
+.haze{position:absolute;inset:0;z-index:4;background:linear-gradient(120deg,rgba(220,228,236,.92),rgba(190,204,218,.88));backdrop-filter:blur(7px);animation:wipe 2.4s .5s cubic-bezier(.65,0,.25,1) forwards}
+.haze::after{content:"";position:absolute;right:-3px;top:0;bottom:0;width:6px;background:#fff;box-shadow:0 0 18px 4px rgba(255,255,255,.9)}
+@keyframes wipe{to{clip-path:inset(0 0 0 100%)}}
+.haze{clip-path:inset(0 0 0 0)}
+.spark{position:absolute;z-index:6;color:var(--sun);animation:twinkle 3.6s ease-in-out infinite}
+.spark.s1{top:9%;right:6%;font-size:34px}
+.spark.s2{bottom:30%;left:-14px;font-size:22px;animation-delay:1.2s;color:#fff;text-shadow:0 0 12px rgba(40,104,152,.6)}
+.spark.s3{top:42%;right:-12px;font-size:18px;animation-delay:2.1s}
+@keyframes twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.5}50%{transform:scale(1.15) rotate(25deg);opacity:1}}
+.stamp{position:absolute;z-index:7;left:-34px;bottom:44px;background:var(--ink);color:#fff;border-radius:20px;padding:16px 20px;max-width:210px;box-shadow:0 20px 40px -16px rgba(15,42,67,.7);transform:rotate(-3deg)}
+.stamp b{display:block;font-family:var(--serif);font-size:38px;font-weight:500;line-height:1;color:var(--sun)}
+.stamp span{font-size:14px;line-height:1.35;display:block;margin-top:6px}
+
+/* about */
+.about{background:var(--mist);padding:110px 0;position:relative}
+.about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.polaroid{position:relative;background:#fff;padding:16px 16px 62px;border-radius:6px;box-shadow:0 30px 60px -28px rgba(15,42,67,.5);transform:rotate(-2.5deg);max-width:470px}
+.polaroid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px}
+.polaroid figcaption{position:absolute;left:20px;bottom:16px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--blue-d)}
+.tape{position:absolute;top:-14px;left:50%;width:120px;height:30px;background:rgba(242,182,61,.55);transform:translateX(-50%) rotate(3deg)}
+.about h2{font-size:clamp(34px,4.2vw,56px);margin:18px 0 22px}
+.about p{color:#34506a;max-width:620px}
+.facts{margin-top:40px;border-top:1px solid var(--line)}
+.fact{display:grid;grid-template-columns:150px 1fr;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.fact b{font-family:var(--serif);font-weight:500;font-size:clamp(40px,4.4vw,60px);line-height:1;color:var(--blue)}
+.fact span{font-size:18px;color:var(--ink)}
+.about .more{display:inline-block;margin-top:30px;font-weight:600;border-bottom:2px solid var(--sun);padding-bottom:2px}
+
+/* seasons */
+.seasons{background:var(--ink);color:#fff;padding:120px 0 130px}
+.seasons .head{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+.seasons h2{font-size:clamp(36px,4.8vw,66px);max-width:700px;margin-top:18px}
+.seasons .eyebrow{color:var(--sky)}
+.seasons .head p{max-width:380px;color:#b9cadb}
+.panes{display:flex;gap:14px;height:600px}
+.pane{position:relative;flex:1;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,var(--ink-2),var(--blue-d));background-size:cover;background-position:center;transition:flex .7s cubic-bezier(.6,0,.2,1);display:flex;align-items:flex-end;isolation:isolate}
+.pane::before{content:"";position:absolute;inset:0;background:var(--bg) center/cover;z-index:-2;transition:transform .9s}
+.pane::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,28,46,.92) 8%,rgba(10,28,46,.25) 55%,rgba(10,28,46,.15));z-index:-1}
+.pane.active{flex:2.8}
+.pane.active::before{transform:scale(1.05)}
+.pane .in{padding:30px;width:100%}
+.pane .tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px}
+.pane h3{font-size:32px;margin:14px 0 0;white-space:nowrap}
+.pane .more{max-height:0;opacity:0;overflow:hidden;transition:max-height .6s,opacity .5s .1s}
+.pane.active .more{max-height:220px;opacity:1}
+.pane .more p{margin:12px 0 18px;color:#d6e2ee;max-width:420px;font-size:16px}
+.pane .more span{font-weight:600;color:var(--sun);display:inline-flex;gap:8px;align-items:center}
+
+/* slider */
+.ba{padding:120px 0;background:var(--paper)}
+.ba .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.ba h2{font-size:clamp(34px,4.2vw,56px);margin:18px 0 20px}
+.ba p{color:#34506a;max-width:440px}
+.ba .note{font-size:14px;margin-top:22px;color:#6a8199}
+.cmp{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#9db0c2,#d4dfea);box-shadow:0 36px 70px -30px rgba(15,42,67,.55);user-select:none;--pos:50%}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--pos);width:4px;background:#fff;transform:translateX(-50%);box-shadow:0 0 20px rgba(0,0,0,.35);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:50%;width:54px;height:54px;border-radius:50%;background:var(--sun);transform:translate(-50%,-50%);display:grid;place-items:center;font-size:22px;color:var(--ink);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .lbl{position:absolute;bottom:16px;padding:6px 14px;border-radius:999px;background:rgba(15,42,67,.78);color:#fff;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;pointer-events:none}
+.cmp .lbl.l{left:16px}.cmp .lbl.r{right:16px;background:var(--blue)}
+
+/* reviews */
+.reviews{background:var(--sky);padding:120px 0;position:relative;overflow:hidden}
+.reviews .top-row{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:54px}
+.reviews h2{font-size:clamp(34px,4.4vw,60px);margin-top:18px;max-width:640px}
+.rgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:26px}
+.rbig{background:var(--ink);color:#fff;border-radius:28px;padding:54px 50px;position:relative;grid-row:span 2}
+.rbig .q{font-family:var(--serif);font-size:140px;line-height:.5;color:var(--sun);display:block;height:60px}
+.rbig h3{font-size:clamp(28px,3vw,40px);margin:10px 0 22px}
+.rbig p{font-size:19px;color:#d6e2ee}
+.who{display:flex;align-items:center;gap:14px;margin-top:30px}
+.av{width:48px;height:48px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;font-weight:700}
+.who small{display:block;opacity:.7;font-size:14px}
+.rcard{background:#fff;border-radius:22px;padding:32px 34px}
+.rcard:nth-child(3){transform:translateX(26px)}
+.rcard h3{font-size:24px;margin-bottom:12px}
+.rcard p{font-size:16px;color:#34506a}
+.rcard .who{margin-top:20px}
+.rcard .av{background:var(--sky);color:var(--blue-d)}
+
+/* areas */
+.areas{position:relative;padding:130px 0;color:#fff;background:linear-gradient(160deg,var(--ink),var(--blue-d)) ;isolation:isolate;overflow:hidden}
+.areas::before{content:"";position:absolute;inset:0;background:url(images/calgary-skyline.jpg) center/cover;z-index:-2}
+.areas::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,42,67,.94) 20%,rgba(15,42,67,.55));z-index:-1}
+.areas .eyebrow{color:var(--sky)}
+.towns{list-style:none;margin:30px 0 34px}
+.towns li{font-family:var(--serif);font-size:clamp(40px,7vw,98px);line-height:1.02;letter-spacing:-.025em;color:rgba(255,255,255,.35);transition:color .3s,transform .3s;cursor:default;width:fit-content}
+.towns li:hover{color:#fff;transform:translateX(18px)}
+.towns li:first-child{color:#fff}
+.areas p{max-width:460px;color:#c9d9e8}
+
+/* quote */
+.quote{padding:110px 0;background:var(--paper)}
+.qbox{display:grid;grid-template-columns:1.2fr .8fr;border-radius:34px;overflow:hidden;box-shadow:0 40px 80px -36px rgba(15,42,67,.45)}
+.qbox .l{background:var(--blue);color:#fff;padding:64px 60px;position:relative;overflow:hidden}
+.qbox .l::after{content:"\2726";position:absolute;right:-30px;bottom:-60px;font-size:300px;color:rgba(255,255,255,.1);line-height:1}
+.qbox h2{font-size:clamp(32px,3.8vw,52px)}
+.qbox .l p{margin:20px 0 32px;color:#dbe8f3;max-width:460px}
+.qbox .r{background:#fff;padding:56px 50px;display:flex;flex-direction:column;justify-content:center;gap:26px;border:1px solid var(--line);border-left:0;border-radius:0 34px 34px 0}
+.qbox .r small{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:4px}
+.qbox .r a.big{font-family:var(--serif);font-size:clamp(30px,3vw,40px);letter-spacing:-.01em}
+.qbox .r a.mail{font-size:18px;word-break:break-all;border-bottom:2px solid var(--sun);width:fit-content}
+
+/* blog */
+.blog{padding:20px 0 110px}
+.blog .row-h{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px;flex-wrap:wrap;gap:20px}
+.blog h2{font-size:clamp(30px,3.6vw,46px)}
+.post{display:grid;grid-template-columns:150px 1fr 50px;gap:24px;align-items:center;padding:26px 0;border-top:1px solid var(--line);transition:padding .3s,background .3s}
+.post:last-child{border-bottom:1px solid var(--line)}
+.post time{font-size:14px;color:#6a8199;font-weight:500}
+.post h3{font-size:clamp(22px,2.4vw,30px)}
+.post .ar{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;transition:.3s}
+.post:hover{padding-left:16px}
+.post:hover .ar{background:var(--sun);border-color:var(--sun);transform:rotate(-45deg)}
+
+/* footer */
+footer{background:var(--ink);color:#c5d4e3;padding:84px 0 0}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:50px}
+.fgrid h4{font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.fgrid ul{list-style:none;display:grid;gap:10px}
+.fgrid a:hover{color:var(--sun)}
+.flogo{display:inline-block;background:#fff;border-radius:16px;padding:10px 18px;margin-bottom:20px}
+.flogo img{height:56px;width:auto}
+.fgrid p{max-width:320px;font-size:16px}
+.soc{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.soc a{border:1px solid rgba(255,255,255,.28);padding:8px 14px;border-radius:999px;font-size:14px;transition:.25s}
+.soc a:hover{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.fbar{margin-top:64px;border-top:1px solid rgba(255,255,255,.14);padding:24px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:15px}
+.fbar a{color:#fff;font-weight:600;border-bottom:2px solid var(--sun)}
+.fbar a:hover{color:var(--sun)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:1020px){
+  .hero .wrap,.about .wrap,.ba .wrap{grid-template-columns:1fr;gap:56px}
+  .windowframe{max-width:460px;margin:0 auto}
+  .stamp{left:8px}
+  .rgrid{grid-template-columns:1fr}
+  .rcard:nth-child(3){transform:none}
+  .qbox{grid-template-columns:1fr}
+  .qbox .r{border-left:1px solid var(--line);border-top:0;border-radius:0 0 34px 34px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .panes{flex-direction:column;height:auto}
+  .pane,.pane.active{flex:none;min-height:300px}
+  .pane .more{max-height:220px;opacity:1}
+  .pane h3{white-space:normal}
+  .nav{position:fixed;inset:0 0 auto 0;top:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:100px 28px 36px;gap:18px;transform:translateY(-102%);transition:transform .4s;z-index:-1;box-shadow:0 20px 40px rgba(0,0,0,.15)}
+  .nav.open{transform:none}
+  .burger{display:block;z-index:60}
+  .nav .link{font-size:22px;font-family:var(--serif)}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding-bottom:80px}
+  .about,.seasons,.ba,.reviews,.quote{padding:80px 0}
+  .areas{padding:90px 0}
+  .fact{grid-template-columns:1fr;gap:4px}
+  .rbig{padding:38px 28px}
+  .qbox .l,.qbox .r{padding:40px 28px}
+  .post{grid-template-columns:1fr 44px;gap:10px}
+  .post time{grid-column:1/-1}
+  .fgrid{grid-template-columns:1fr}
+  .logo img{height:48px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .haze{display:none}.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="https://www.calgarywindowclean.com/" aria-label="Sparkle & Shine Window Cleaning home">
+      <img src="https://cdn.prod.website-files.com/621c0b98d47b2e123eaf57d8/621c1172b4b928781423a82c_logo-sparkle-shine-window-cleaning-calgary.png" alt="Sparkle & Shine Window Cleaning logo" width="109" height="58">
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a class="link" href="https://www.calgarywindowclean.com/">Home</a>
+      <a class="link" href="https://www.calgarywindowclean.com/about">About</a>
+      <a class="link" href="https://www.calgarywindowclean.com/services">Services</a>
+      <a class="link" href="https://www.calgarywindowclean.com/blog">Blog</a>
+      <a class="link" href="https://www.calgarywindowclean.com/contact">Contact</a>
+      <a class="nav-call" href="tel:+14038627662">(403) 862-7662</a>
+      <a class="btn btn-primary" href="https://www.calgarywindowclean.com/instant-quote">Instant quote</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Family owned, Calgary, since 2004</div>
+      <h1>Streak-free windows, done by a Calgary <em>family</em> you can trust.</h1>
+      <p class="lead">Reliable, affordable cleaning that goes past what you expected. Windows, gutters, pressure washing and snow removal, all from one friendly crew.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://www.calgarywindowclean.com/instant-quote">Get an instant quote</a>
+        <a class="btn btn-ghost" href="tel:+14038627662">Call (403) 862-7662</a>
+      </div>
+      <div class="proof">
+        <span>Registered with the <a href="https://www.bbb.org/ca/ab/calgary/profile/window-cleaning/sparkle-shine-0017-54765" target="_blank" rel="noopener">Better Business Bureau</a></span>
+        <span><a href="https://www.google.com/maps/place/Sparkle+%26+Shine+Window+Cleaning/@50.9433278,-115.516555,8z/data=!3m1!4b1!4m5!3m4!1s0x5371710521419da3:0x3b97a6db452da7aa!8m2!3d50.9469876!4d-114.3929492" target="_blank" rel="noopener">Read our Google reviews</a></span>
+      </div>
+    </div>
+    <div class="windowframe">
+      <span class="spark s1" aria-hidden="true">&#10022;</span>
+      <span class="spark s2" aria-hidden="true">&#10022;</span>
+      <span class="spark s3" aria-hidden="true">&#10022;</span>
+      <div class="pane-view">
+        <img src="https://cdn.prod.website-files.com/621c0b98d47b2e123eaf57d8/621ce7396f293cfb1102b408_window-cleaning-calgary-sparkle-shine.jpeg" alt="Timber frame living room with large clean windows looking out to the mountains">
+        <div class="mullion-v"></div><div class="mullion-h"></div>
+        <div class="haze"></div>
+      </div>
+      <div class="stamp"><b>500+</b><span>homes and offices made to sparkle every year</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <figure class="polaroid rv">
+      <span class="tape" aria-hidden="true"></span>
+      <img src="https://cdn.prod.website-files.com/621c0b98d47b2e123eaf57d8/621c16b4b4b92847f123d5ed_Richard%20Owner%20of%20Sparkle%20Shine%20Window%20Cleaning.jpeg" alt="Richard, owner of Sparkle & Shine, cleaning a large glass storefront from a ladder" loading="lazy">
+      <figcaption>Richard, owner</figcaption>
+    </figure>
+    <div class="rv">
+      <div class="eyebrow">About us</div>
+      <h2>Brilliantly clean, streak-free windows and peace of mind, guaranteed.</h2>
+      <p>We believe sparkling windows and a tidy property make life a little happier. Richard and his professionally trained team show up on time, work carefully, and leave your place looking better than they found it. Our business is built on diligence and trust.</p>
+      <div class="facts">
+        <div class="fact"><b>2004</b><span>The year we started cleaning Calgary homes and offices</span></div>
+        <div class="fact"><b>500+</b><span>Homes and offices cleaned every single year</span></div>
+        <div class="fact"><b>100%</b><span>Client satisfaction is the promise we work to</span></div>
+      </div>
+      <a class="more" href="https://www.calgarywindowclean.com/about">More about Sparkle & Shine</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONS -->
+<section class="seasons" id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <div class="eyebrow">Our services</div>
+        <h2>One crew for every Calgary season.</h2>
+      </div>
+      <p>Hover or tap a season to see what we do. Each one links to the full service page.</p>
+    </div>
+    <div class="panes rv" id="panes">
+      <a class="pane active" href="https://www.calgarywindowclean.com/services/window-cleaning" style="--bg:url(images/season-spring.jpg)">
+        <div class="in"><span class="tag">Spring</span><h3>Window Cleaning</h3>
+        <div class="more"><p>Top-quality residential and commercial window cleaning that keeps your glass sparkling and shining.</p><span>View service &rarr;</span></div></div>
+      </a>
+      <a class="pane" href="https://www.calgarywindowclean.com/services/pressure-washing" style="--bg:url(images/season-summer.jpg)">
+        <div class="in"><span class="tag">Summer</span><h3>Pressure Washing</h3>
+        <div class="more"><p>Professional-grade washers that clean driveways, siding and any textured exterior surface.</p><span>View service &rarr;</span></div></div>
+      </a>
+      <a class="pane" href="https://www.calgarywindowclean.com/services/gutter-cleaning" style="--bg:url(images/season-fall.jpg)">
+        <div class="in"><span class="tag">Fall</span><h3>Gutter Cleaning</h3>
+        <div class="more"><p>Dirty or clogged, we clear it out and help protect your house from erosion and damage.</p><span>View service &rarr;</span></div></div>
+      </a>
+      <a class="pane" href="https://www.calgarywindowclean.com/services/snow-removal" style="--bg:url(images/season-winter.jpg)">
+        <div class="in"><span class="tag">Winter</span><h3>Snow Removal</h3>
+        <div class="more"><p>We take care of the heavy lifting during Calgary's long winters so you can stay inside.</p><span>View service &rarr;</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section class="ba">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">The difference</div>
+      <h2>Drag the squeegee. Watch the grime go.</h2>
+      <p>This is what we mean by streak-free. Slide across to compare a dull, dusty pane with the finished clean.</p>
+      <p class="note">Illustrative example image.</p>
+    </div>
+    <div class="cmp rv" id="cmp">
+      <img src="images/after-window.jpg" alt="Clean window after cleaning" loading="lazy">
+      <img class="before" src="images/before-window.jpg" alt="Dirty window before cleaning" loading="lazy">
+      <span class="lbl l">Before</span><span class="lbl r">After</span>
+      <div class="bar"><div class="knob" aria-hidden="true">&#8596;</div></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="top-row rv">
+      <div>
+        <div class="eyebrow">Testimonials</div>
+        <h2>What our Calgary neighbours say about us.</h2>
+      </div>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/place/Sparkle+%26+Shine+Window+Cleaning/@50.9433278,-115.516555,8z/data=!3m1!4b1!4m5!3m4!1s0x5371710521419da3:0x3b97a6db452da7aa!8m2!3d50.9469876!4d-114.3929492" target="_blank" rel="noopener">See all Google reviews</a>
+    </div>
+    <div class="rgrid">
+      <article class="rbig rv">
+        <span class="q" aria-hidden="true">&ldquo;</span>
+        <h3>Professional, respectful, accommodating</h3>
+        <p>I am very impressed how professional, respectful and accommodating the workers are. Arrived in time, very efficient in their job, knowing exactly what they were doing and finishing in no time. They are hard workers and they genuinely want to provide great quality service. Bonus is a great reasonable price. I would recommend Sparkle & Shine in a heartbeat. Thank you very much!</p>
+        <div class="who"><div class="av">JZ</div><div>Janneta Z<small>Calgary, AB</small></div></div>
+      </article>
+      <article class="rcard rv">
+        <h3>They went above and beyond</h3>
+        <p>What wonderful service and quality cleaning! These guys went above and beyond, and they were, by far, the best value. They were responsive, on time and very personable.</p>
+        <div class="who"><div class="av">AK</div><div>Arranny K<small>Calgary, AB</small></div></div>
+      </article>
+      <article class="rcard rv">
+        <h3>I wish I had called them years ago</h3>
+        <p>First time using Sparkle and Shine, to have our windows and driveway powerwashed. I wish I had called them yrs ago, they showed up on time, finished quickly cleaned up everything and were gone. I am so happy with the work and will never attempt cleaning ect of my own house again.</p>
+        <div class="who"><div class="av">RC</div><div>Ryan C<small>Calgary, AB</small></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas">
+  <div class="wrap rv">
+    <div class="eyebrow">Where we work</div>
+    <ul class="towns">
+      <li>Calgary</li><li>Airdrie</li><li>Chestermere</li><li>Cochrane</li><li>Okotoks</li><li>High River</li>
+    </ul>
+    <p>Not sure if we cover your street? Give us a call and we will let you know straight away.</p>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="qbox rv">
+      <div class="l">
+        <h2>Ready to schedule? Book a time and get your quote today.</h2>
+        <p>Tell us what needs cleaning and we will come back with a clear, fair price.</p>
+        <a class="btn btn-sun" href="https://www.calgarywindowclean.com/instant-quote">Get an instant quote</a>
+      </div>
+      <div class="r">
+        <div><small>Call us</small><a class="big" href="tel:+14038627662">(403) 862-7662</a></div>
+        <div><small>Email us</small><a class="mail" href="mailto:sparkle.shine@hotmail.com">sparkle.shine@hotmail.com</a></div>
+        <div><small>Or see our services</small><a class="mail" href="https://www.calgarywindowclean.com/services">Browse all services</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog">
+  <div class="wrap">
+    <div class="row-h rv">
+      <div><div class="eyebrow">Blog and news</div><h2 style="margin-top:14px">Good reads from the crew</h2></div>
+      <a class="btn btn-ghost" href="https://www.calgarywindowclean.com/blog">Browse articles</a>
+    </div>
+    <div class="rv">
+      <a class="post" href="https://www.calgarywindowclean.com/blog/how-to-hire-window-cleaners-calgary"><time datetime="2022-05-25">May 25, 2022</time><h3>How should you hire window cleaners in Calgary?</h3><span class="ar" aria-hidden="true">&rarr;</span></a>
+      <a class="post" href="https://www.calgarywindowclean.com/blog/why-pay-attention-to-eavestrough-cleaning"><time datetime="2022-08-04">August 4, 2022</time><h3>Why pay attention to eavestrough cleaning?</h3><span class="ar" aria-hidden="true">&rarr;</span></a>
+      <a class="post" href="https://www.calgarywindowclean.com/blog/redesigned-website-for-sparkle-shine-window-cleaning-calgary"><time datetime="2022-05-06">May 6, 2022</time><h3>Redesigned website with a new appointment request and contact form</h3><span class="ar" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="flogo" href="https://www.calgarywindowclean.com/"><img src="https://cdn.prod.website-files.com/621c0b98d47b2e123eaf57d8/621c1172b4b928781423a82c_logo-sparkle-shine-window-cleaning-calgary.png" alt="Sparkle & Shine Window Cleaning" width="106" height="56"></a>
+        <p>Making your Calgary homes and offices Sparkle & Shine since 2004!</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/sparkleandshineyyc" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.linkedin.com/company/sparkle-shine-window-cleaning" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.yelp.ca/biz/sparkle-and-shine-calgary-2" target="_blank" rel="noopener">Yelp</a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://www.calgarywindowclean.com/services/window-cleaning">Window Cleaning</a></li>
+          <li><a href="https://www.calgarywindowclean.com/services/gutter-cleaning">Gutter Cleaning</a></li>
+          <li><a href="https://www.calgarywindowclean.com/services/pressure-washing">Pressure Washing</a></li>
+          <li><a href="https://www.calgarywindowclean.com/services/snow-removal">Snow Removal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://www.calgarywindowclean.com/">Home</a></li>
+          <li><a href="https://www.calgarywindowclean.com/about">About</a></li>
+          <li><a href="https://www.calgarywindowclean.com/blog">Blog</a></li>
+          <li><a href="https://www.calgarywindowclean.com/contact">Contact</a></li>
+          <li><a href="https://www.calgarywindowclean.com/instant-quote">Instant quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+14038627662">(403) 862-7662</a></li>
+          <li><a href="mailto:sparkle.shine@hotmail.com">sparkle.shine@hotmail.com</a></li>
+          <li>Calgary, Airdrie, Chestermere, Cochrane, Okotoks and High River</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbar">
+      <span>&copy; 2026 Sparkle & Shine Window Cleaning. All rights reserved.</span>
+      <span>Design by <a href="https://www.dallaswebagency.us/" target="_blank" rel="noopener">Dallas Web Agency</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var top=document.getElementById('top');
+  function sc(){top.classList.toggle('scrolled',window.scrollY>10)}
+  sc();window.addEventListener('scroll',sc,{passive:true});
+
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded',false)}});
+
+  var panes=[].slice.call(document.querySelectorAll('.pane'));
+  function act(p){panes.forEach(function(x){x.classList.toggle('active',x===p)})}
+  panes.forEach(function(p){
+    p.addEventListener('mouseenter',function(){if(window.innerWidth>1020)act(p)});
+    p.addEventListener('focus',function(){act(p)});
+  });
+
+  var cmp=document.getElementById('cmp'),r=cmp.querySelector('input');
+  r.addEventListener('input',function(){cmp.style.setProperty('--pos',r.value+'%')});
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else{els.forEach(function(e){e.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
